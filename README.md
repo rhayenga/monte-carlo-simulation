@@ -11,7 +11,8 @@ This project explores two quantitative finance techniques using Python in [Quant
 I built this project to strengthen my programming and quantitative finance skills:  
 - Learned how to implement Monte Carlo simulations in Python.  
 - Gained experience with backtesting trading strategies.  
-- Developed a better understanding of Python functions, syntax, and files.  
+- Developed a better understanding of Python functions, syntax, and files.
+- Important Note: This project will only be able to be run in QuantConnect. This code needs (Lean Engine) for backtesting and needs to be able to access QuantConnect's free API. 
 
 When I started, I had minimal Python experience — this project was a great interactive way to learn both coding and market modeling.  
 
