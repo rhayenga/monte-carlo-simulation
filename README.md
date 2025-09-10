@@ -32,4 +32,11 @@ Special thanks to the YouTube channel QuantProgram for troubleshooting guidance 
 ## Repository Contents
 - `main.py` → Algorithm code (Monte Carlo + SMA crossover)  
 - `research.ipynb` → Research script exploring RL with Bollinger Bands 
-- `README.md` → Project documentation  
+- `README.md` → Project documentation
+- `results.json` → Full written results downloaded from QuantConnect  
+- `Strategy Equity.png` → Equity curve of the strategy  
+- `Drawdown.png` → Historical drawdown chart  
+- `Assets Sales Volume.png` → Trading activity and sales volume  
+- `Portfolio Margin.png` → Portfolio margin usage  
+- `Overview 1.png`, `Overview 2.png` → Sharpe ratio, win rate, average win/loss, total orders, net profit, and more statistics.  
+
