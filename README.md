@@ -33,7 +33,7 @@ Special thanks to the YouTube channel QuantProgram for troubleshooting guidance 
 - `main.py` → Algorithm code (Monte Carlo + SMA crossover)  
 - `research.ipynb` → Research script exploring RL with Bollinger Bands 
 - `README.md` → Project documentation
-- `results.json` → Full written results downloaded from QuantConnect  
+- `results.json` → Full written results downloaded from QuantConnect. The essential results are pictured below. 
 - `Strategy Equity.png` → Equity curve of the strategy  
 - `Drawdown.png` → Historical drawdown chart  
 - `Assets Sales Volume.png` → Trading activity and sales volume  
