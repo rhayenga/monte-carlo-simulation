@@ -30,7 +30,7 @@ class SimpleMonteCarlo(QCAlgorithm):
                 path /= path[0]
                 final_vals.append(path[-1])
 
-            # Log only the essential results because I don't know how to intepret all the data QC gives
+            # Log only the essential results 
             self.Debug(f"Monte Carlo RL (1y) → mean: {np.mean(final_vals):.2f}, "
                        f"5%: {np.percentile(final_vals, 5):.2f}, "
                        f"95%: {np.percentile(final_vals, 95):.2f}")
