@@ -1,42 +1,48 @@
-# Monte Carlo & SMA Crossover Backtest
+# SMA Monte Carlo Backtester
 
-This project explores two quantitative finance techniques using Python in [QuantConnect](https://www.quantconnect.com/):
+Python project that backtests a baseline **20/50-day SMA crossover** on **SPY** with a **$10,000** portfolio, and runs **1,000+ one-year Monte Carlo price paths** with trade logging and standard risk metrics.
 
-- **Monte Carlo Simulation**: Models possible future price paths of Ralph Lauren (RL) stock.  
-- **SMA Crossover Backtest**: Tests a 10-day vs. 50-day Simple Moving Average (SMA) trading strategy to evaluate historical performance and risk.
+This is a research / engineering exercise. It does not claim a trading edge.
 
----
+## What it does
 
-## Project Overview
-I built this project to strengthen my programming and quantitative finance skills:  
-- Learned how to implement Monte Carlo simulations in Python.  
-- Gained experience with backtesting trading strategies.  
-- Developed a better understanding of Python functions, syntax, and files.
-- Important Note: This project will only be able to be run in QuantConnect. This code needs (Lean Engine) for backtesting and needs to be able to access QuantConnect's free API. 
+- Generates **1,000+** simulated one-year SPY paths from historical return statistics
+- Runs a **20/50 SMA** rule on each path and on a historical QuantConnect backtest
+- Logs trades (entry, exit, return) and summarizes wins / losses
+- Reports **Sharpe**, **Sortino**, and **max drawdown**
 
-When I started, I had minimal Python experience — this project was a great interactive way to learn both coding and market modeling.  
+## Run in QuantConnect (LEAN)
 
----
+1. Create a new Algorithm Lab project
+2. Replace `main.py` with this repo’s `main.py`
+3. Backtest (daily resolution, SPY, 2012–2022 by default)
 
-## Tools & Libraries
-- **QuantConnect (Lean Engine)** for backtesting  
-- **Python** for coding simulations and strategies  
+`research.py` is for the QuantConnect Research environment (Bollinger Band exploration on SPY).
 
----
+## Run with Alpaca (paper)
 
-## Acknowledgements
-Special thanks to the YouTube channel QuantProgram for troubleshooting guidance on QuantConnect throughout the project.  
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+export ALPACA_API_KEY="your_paper_key"
+export ALPACA_SECRET_KEY="your_paper_secret"
+python alpaca_sma.py
+```
 
----
+Uses Alpaca market data for a local SPY 20/50 backtest with the same metrics, then optionally submits a paper order. Set `ALPACA_MODE=loop` to rebalance hourly.
 
-## Repository Contents
-- `main.py` → Algorithm code (Monte Carlo + SMA crossover)  
-- `research.ipynb` → Research script exploring RL with Bollinger Bands 
-- `README.md` → Project documentation
-- `results.json` → Full written results downloaded from QuantConnect. The essential results are pictured below. 
-- `Strategy Equity.png` → Equity curve of the strategy  
-- `Drawdown.png` → Historical drawdown chart  
-- `Assets Sales Volume.png` → Trading activity and sales volume  
-- `Portfolio Margin.png` → Portfolio margin usage  
-- `Overview 1.png`, `Overview 2.png` → Sharpe ratio, win rate, average win/loss, total orders, net profit, and more statistics.  
+## Repository contents
 
+| File | Purpose |
+|------|---------|
+| `main.py` | QuantConnect LEAN algorithm (Monte Carlo + historical SMA) |
+| `alpaca_sma.py` | Local metrics + Alpaca paper trading helper |
+| `research.py` | QuantBook research snippet |
+| `requirements.txt` | Local / Alpaca Python deps |
+| `Results.json` / `*.png` | Saved QuantConnect backtest artifacts from an earlier run |
+
+## Notes
+
+- Older charts in this repo may reflect an earlier Ralph Lauren (RL) / 10–50 SMA experiment. Current code targets **SPY** and **20/50**.
+- Re-run the LEAN backtest to refresh `Results.json` and images if you want artifacts to match the updated algorithm.
