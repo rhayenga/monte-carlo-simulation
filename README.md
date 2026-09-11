@@ -2,8 +2,6 @@
 
 Python project that backtests a baseline **20/50-day SMA crossover** on **SPY** with a **$10,000** portfolio, and runs **1,000+ one-year Monte Carlo price paths** with trade logging and standard risk metrics.
 
-This is a research / engineering exercise. It does not claim a trading edge.
-
 ## What it does
 
 - Generates **1,000+** simulated one-year SPY paths from historical return statistics
