@@ -7,7 +7,7 @@ Python project that backtests a baseline **20/50-day SMA crossover** on **SPY** 
 - Generates **1,000+** simulated one-year SPY paths from historical return statistics
 - Runs a **20/50 SMA** rule on each path and on a historical QuantConnect backtest
 - Logs trades (entry, exit, return) and summarizes wins / losses
-- Reports **Sharpe**, **Sortino**, and **max drawdown**
+- Reports **Sharpe**, **Sortino**, and **max drawdown**, etc.
 
 ## Run in QuantConnect (LEAN)
 
