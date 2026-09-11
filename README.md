@@ -44,5 +44,4 @@ Uses Alpaca market data for a local SPY 20/50 backtest with the same metrics, th
 
 ## Notes
 
-- Older charts in this repo may reflect an earlier Ralph Lauren (RL) / 10–50 SMA experiment. Current code targets **SPY** and **20/50**.
 - Re-run the LEAN backtest to refresh `Results.json` and images if you want artifacts to match the updated algorithm.
